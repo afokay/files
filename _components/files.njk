@@ -1,0 +1,25 @@
+<div class="relative overflow-x-auto">
+        <table class="w-full">
+            <thead class="text-xs mb-8">
+                <tr>
+                    <th class="text-justify py-2">Name</th>
+                    <th class="text-center py-2">Last modified</th>
+                    <th class="text-right py-2">Size</th>
+                </tr>
+            </thead>
+            <tbody class="flex-grow border-t border-gray-400">
+                <tr class="border-b">
+                    <td class="text-justify text-xs py-2 flex items-center"><ion-icon name="folder-outline" class="text-stone-800 mr-2"></ion-icon><a href="/" class="text-blue-600 hover:text-blue-400 font-semibold">../</a></td>
+                    <td class="text-center text-xs text-stone-500 py-2">{{ global.date }}</td>
+                    <td class="text-right text-xs text-stone-500 py-2">-</td>
+                </tr>
+                {% for global in global.global %}
+                <tr class="border-b">
+                    <td class="text-justify text-xs py-2 flex items-center"><ion-icon name="document-outline" class="text-stone-800 mr-2"></ion-icon><a href="{{ global.url }}" download="{{ global.title }}" class="text-blue-600 hover:text-blue-400 font-semibold truncate w-64">{{ global.title }}</a></td>
+                    <td class="text-center text-xs text-stone-500 py-2">{{ global.date }}</td>
+                    <td class="text-right text-xs text-stone-500 py-2">{{ global.size }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
