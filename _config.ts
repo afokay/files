@@ -2,6 +2,7 @@ import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
 
 const site = lume({
     location: new URL("https://files-2oa.pages.dev"),
@@ -26,5 +27,6 @@ site.use(tailwindcss({
     },
 }));
 site.use(postcss());
+site.use(minifyHTML());
 
 export default site;
