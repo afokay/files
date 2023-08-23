@@ -27,6 +27,8 @@ site.use(tailwindcss({
     },
 }));
 site.use(postcss());
-site.use(minifyHTML());
+site.use(minifyHTML({
+    extensions: [".html", ".css", ".js"],
+}));
 
 export default site;
