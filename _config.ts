@@ -14,6 +14,8 @@ const site = lume({
     },
 });
 
+site.ignore("README.md");
+
 site.copy("static", ".");
 
 site.use(date());
